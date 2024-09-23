@@ -19,5 +19,16 @@
                 <span class="d-none d-lg-block">$Parent.FeaturedImage.Fill(1200,500)</span>
             </p>
         <% end_if %>
+
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col">
+                    <h1<% if not $Level(2) %> class="text-center"<% end_if %>>
+                        $Title
+                    </h1>
+                </div>
+                <% include BreadCrumbs %>
+            </div>
+        </div>
     </div>
 </div>
