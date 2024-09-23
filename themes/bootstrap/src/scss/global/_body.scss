@@ -2,7 +2,7 @@
     BODY STYLES
 ****************************************/
 .main {
-  background-color: #FFFFFF;
+  background-color: $main-bg;
 
   &.full-background {
     background-size: cover;

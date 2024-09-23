@@ -14,9 +14,6 @@
 		<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-
-		<link rel="stylesheet" href="themes/custom/css/custom.css">
-        <% require css('themes/custom/css/custom.css') %>
 		
 		<% if $FeaturedImage %>
 			<meta property="og:image" content="{$BaseHref}{$FeaturedImage.SetWidth(550).FileName}" />
@@ -35,31 +32,8 @@
 		<% include Requirements_extra %>
 	</head>
 	<body <% if $isHomePage %>class="home-page"<% end_if %> <% if $i18nScriptDirection %>dir="$i18nScriptDirection"<% end_if %>>
-		<!-- Navigation Bar -->
-		<nav class="navbar">
-			<div class="navbar-left">
-				<button class="menu-button no-border">
-					<img src="assets/images/menu.png" alt="Menu" class="menu-icon">
-				</button>
-				<button class="login-button no-border">
-					<img src="assets/images/login.png" alt="Login" class="login-icon">
-					<span class="login-text">Login</span>
-				</button>
-			</div>
-			<div class="navbar-center">
-				<img src="assets/images/logoeab.png" alt="EAB Logo" class="logo">
-				<span class="logo-text">
-					<strong>Entrepreneurs <br> Across <br> Borders</strong>
-				</span>
-			</div>
-			<div class="navbar-right">
-				<button class="get-involved-button">Get Involved</button>
-				<a href="#" class="contact-link">
-					Contact Us <span class="contact-arrow">→</span>
-				</a>
-			</div>
-		</nav>
-		<!--<% include Header %>-->
+		
+		<% include Header %>
 
 		<div class="main<% if $Level(2) %> sublevel<% end_if %><% if $FeaturedImage || $MapEmbed %> no-pad-top<% end_if %><% if $SiteConfig.TileBackground %> tile-background<% else %> full-background<% end_if %>" role="main"<% if $SiteConfig.Background %> style="background-image: url($SiteConfig.Background.ScaleMaxWidth(1920).URL)"<% end_if %>>
 			<%-- Banner to contain featured image, page title, etc --%>
@@ -72,50 +46,7 @@
 			<% include Layout Layout=$Layout, Top=$Top, Me=$Me %>
 		</div>
 
-		<!--<% include Footer %>-->
-		<footer class="site-footer">
-			<div class="footer-top">
-				<div class="footer-logo">
-					<img src="assets/images/logoeab.png" alt="EAB Logo" class="footer-logo-img">
-					<div class="footer-social">
-						<a href="#" class="social-icon"><img src="assets/images/facebook.png" alt="Facebook"></a>
-						<a href="#" class="social-icon"><img src="assets/images/instagram.png" alt="Instagram"></a>
-						<a href="#" class="social-icon"><img src="assets/images/linkedin-icon.png" alt="LinkedIn"></a>
-					</div>
-				</div>
-				<div class="footer-links">
-					<div class="footer-column">
-						<h4>Initiatives</h4>
-						<ul>
-							<li><a href="#">Partners</a></li>
-							<li><a href="#">Entrepreneurs</a></li>
-							<li><a href="#">Get Involved</a></li>
-							<li><a href="#">Global Impact Network</a></li>
-							<li><a href="#">Events</a></li>
-						</ul>
-					</div>
-					<div class="footer-column">
-						<h4>About</h4>
-						<ul>
-							<li><a href="#">Team</a></li>
-							<li><a href="#">Contact</a></li>
-							<li><a href="#">Careers</a></li>
-						</ul>
-					</div>
-					<div class="footer-column">
-						<h4>Insights</h4>
-						<ul>
-							<li><a href="#">News</a></li>
-							<li><a href="#">Blog</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="footer-bottom">
-				<p><strong>© Entrepreneurs Across Borders </strong>&nbsp; &nbsp; <a href="#">Privacy Policy</a> &nbsp; | &nbsp; <a href="#">Cookie Policy</a></p>
-				<p class="footer-credit">Digital by <strong>TRAINOR</strong></p>
-			</div>
-		</footer>
+		<% include Footer %>
 
 	</body>
 </html>

@@ -143,7 +143,7 @@ $sizes: (
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$main-bg:                   #FFFFFF !default;
+$main-bg:                   $gray-200 !default;
 $body-color:                $gray-900 !default;
 
 // Links

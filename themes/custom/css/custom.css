@@ -4,13 +4,18 @@ html, body {
     padding: 0;
 }
 
+.main {
+    background-color: #FFFFFF !important;
+}
+
 /* Global Styles */
 .container {
-    width: 100%;
-    max-width: 100%; /* Set a max-width for better readability on large screens */
+    width: 100% !important;
+    max-width: 100% !important; /* Set a max-width for better readability on large screens */
     margin: 0 auto;    /* Center the container */
-    padding: 0 20px;   /* Responsive horizontal padding */
+    padding: 0 20px !important;   /* Responsive horizontal padding */
     box-sizing: border-box;
+    background: #FFFFFF;
 }
 
 .content-container {
