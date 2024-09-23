@@ -1,0 +1,561 @@
+html, body {
+    background: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Styles */
+.container {
+    width: 100%;
+    max-width: 100%; /* Set a max-width for better readability on large screens */
+    margin: 0 auto;    /* Center the container */
+    padding: 0 20px;   /* Responsive horizontal padding */
+    box-sizing: border-box;
+}
+
+.content-container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Testimonial Section */
+.testimonial-container {
+    display: flex !important;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.testimonial-box {
+    background-color: #C94F13;
+    color: white;
+    flex: 1 1 calc(33.333% - 40px); /* Responsive flex basis */
+    min-width: 250px; /* Adjusted for better responsiveness */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-top: 10px solid #FC9219;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-box:nth-child(odd) {
+    background-color: #20881B;
+    border-top: 10px solid #8BC34A;
+}
+
+.subtitle {
+    position: relative; /* For positioning of the pseudo-element */
+    margin-bottom: 80px; /* Space below the subtitle */
+}
+
+/* Adding the dashed lines after the subtitle */
+.testimonial-box:nth-child(odd) .subtitle::after {
+    content: '';
+    display: block;
+    width: 70px; /* Width of the first dashed line */
+    border-bottom: 1px dashed #ffffff;          /* Adjust thickness */
+    border-bottom-width: 5px;                   /* Adjust border width */
+    border-bottom-style: dashed;                /* Dashed style */
+    border-bottom-color: #ffffff;               /* Border color */
+    border-image: repeating-linear-gradient(
+        to right, 
+        #ffffff 0,                          /* Start with white */
+        #ffffff 30px,                       /* Length of the white dash */
+        transparent 30px,                   /* Start of the gap */
+        transparent 40px,                   /* Length of the gap */
+        #FFFFFF80 40px,                       /* Start of the grey dash */
+        #ffffff80 70px   
+
+    ) 100% 1;  /* Full width and control over the dash pattern */
+    margin-top: 10px; /* Space between the subtitle and the lines */
+}
+
+.learn-more {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+    align-self: flex-end;
+}
+
+.learn-more::after {
+    content: ' →';
+}
+
+.learn-more::before {
+    content: '';
+    display: block;
+    width: 100%; /* Make the dashed line take the full width */
+    border-top: 1px dashed #ffffff;          /* Adjust thickness */
+    border-top-width: 1px;                   /* Adjust border width */
+    border-top-style: dashed;                /* Dashed style */
+    border-top-color: #ffffff;               /* Border color */
+    border-image: repeating-linear-gradient(
+        to right, 
+        #ffffff 0, 
+        #ffffff 10px, /* Dash length */
+        transparent 10px, 
+        transparent 20px /* Gap size */
+    ) 100% 1;  /* Full width and control over the dash pattern */
+    position: absolute; /* Position absolute within the .testimonial-box */
+    left: 0; /* Align the dashed line to the left */
+    bottom: 30px;
+    margin-bottom: 20px;    
+}
+
+/* Layout Container */
+.layout-container {
+    display: flex;
+    flex-wrap: wrap;               /* Allow wrapping on smaller screens */
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 50px;           /* Reduced margin for better spacing on small screens */
+}
+
+/* Content Left */
+.content-left {
+    flex: 1 1 100%;                /* Full width on small screens */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Content Right */
+.content-right {
+    flex: 1 1 100%;                /* Full width on small screens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image Stack */
+.image-stack {
+    position: relative;
+    display: inline-block;
+    max-width: 800px;               /* Ensure images are responsive */
+}
+
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;               /* Wrap items on smaller screens */
+    padding: 20px 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-left {
+    display: flex;           /* Use flexbox for the container */
+    align-items: center;     /* Center items vertically */
+}
+
+.navbar-center {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    max-height: 40px;
+    width: auto;
+}
+
+.logo-text {
+    display: none;                 /* Hide logo text on small screens */
+}
+
+.menu-button {
+    margin-right: 30px;  /* Adds space between menu and login button */
+    margin-left: 15px;
+}
+
+.menu-icon {
+    width: 64px;              /* Adjust size of the login icon */
+    height: 64px;             /* Adjust size of the login icon */
+    margin-right: 30px;
+}
+
+.login-icon {
+    width: 24px;              /* Adjust size of the login icon */
+    height: 24px;             /* Adjust size of the login icon */
+    margin-right: 8px;        /* Adds space between the icon and text */
+}
+
+.login-text {
+    font-size: 14px;          /* Adjust the text size if needed */
+    font-weight: bold;  /* Bold text */
+}
+
+.no-border {
+    background: none;      /* Removes the background color */
+    border: none;          /* Removes the border */
+    padding: 0;            /* Removes any padding */
+    margin: 0;             /* Removes any margin */
+    outline: none;         /* Removes outline when focused */
+    cursor: pointer;       /* Ensures the cursor is a pointer on hover */
+    display: inline-flex;  /* Aligns the button content */
+    align-items: center;   /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+
+@media (min-width: 600px) {
+    .logo-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        line-height: 1.2;
+        font-size: 12px;
+        text-align: left;
+        overflow: hidden;
+    }
+}
+
+/* Buttons and Links */
+.get-involved-button {
+    background-color: #3366FF;
+    margin-right: 15px;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.get-involved-button:hover {
+    background-color: #264d99;
+    transform: scale(1.05);
+}
+
+.get-involved-button:active {
+    background-color: #1e3f7a;
+    transform: scale(1);
+}
+
+.contact-link {
+    color: #3366FF;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 0;
+    margin-top: 10px;              /* Add margin for spacing on small screens */
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.contact-link:hover {
+    color: #264d99;
+}
+
+.contact-arrow {
+    margin-left: 5px;
+    font-size: 16px;
+    transition: margin-left 0.3s;
+}
+
+.contact-link:hover .contact-arrow {
+    margin-left: 8px;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #FFFFFF;
+    border-top: 1px dashed #949494;          /* Adjust thickness */
+    border-top-width: 1px;                   /* Adjust border width */
+    border-top-style: dashed;                /* Dashed style */
+    border-top-color: #949494;               /* Border color */
+    border-image: repeating-linear-gradient(
+        to right, 
+        #949494 0, 
+        #949494 10px, /* Dash length */
+        transparent 10px, 
+        transparent 20px /* Gap size */
+    ) 100% 1;  /* Full width and control over the dash pattern */
+    text-align: center;                 /* Center text for bottom section */
+  }
+  
+  .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 20px;
+    margin: 0 auto;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .footer-logo {
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .footer-logo-img {
+    height: 60px;
+    width: auto;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .footer-social {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+  }
+  
+  .social-icon img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .footer-links {
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: left;
+  }
+  
+  .footer-column {
+    flex: 1 1 45%;                /* Adjust columns to fit two per row */
+    margin-bottom: 20px;
+  }
+  
+  .footer-column h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-column ul li a {
+    text-decoration: none;
+    color: #666;
+    transition: color 0.3s;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #000;
+  }
+  
+  .footer-bottom {
+    background-color: #F8F9FB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  .footer-bottom p {
+    flex: 1 1 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .footer-credit {
+    text-align: center;
+    font-weight: bold;
+  }
+
+
+  /* Images */
+.right-image {
+    width: 100%;                          /* Set base image width */
+    height: auto;                         /* Maintain aspect ratio */
+    display: block;                       /* Block display to take up space */
+}
+
+.hero-image {
+    position: absolute;                   /* Position on top of the base image */
+    bottom: 0;                               /* Align to the top */
+    left: 0;                              /* Align to the left */
+    width: 100%;                          /* Cover the same area as the base image */
+    max-width: 100%;
+    height: auto;                         /* Maintain aspect ratio */
+    object-fit: cover;                    /* Cover to fill without stretching */
+    opacity: 1;                         /* Optional: Adjust opacity for effect */
+    pointer-events: none;                 /* Ensure clicks pass through if needed */
+    z-index: 1;
+    padding-left: 20px;
+}
+
+.quote-image {
+    height: auto;
+    max-width: 500px; 
+}
+
+/* Hero Section */
+.hero-section {
+    width: 100%;
+    margin-left: 0;
+    background-color: transparent;
+    padding: 20px;
+    text-align: start;
+}
+
+.hero-section h1 {
+    font-size: 66px;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 10px;
+}
+
+.hero-section h3 {
+    font-size: 38px;
+    font-weight: 700;
+    font-style: normal;
+    color: #000000;
+}
+
+/* Quote Section */
+.quote-section {
+    position: relative;
+    width: 100%;
+    max-width: 70%;
+    margin: 50px auto;
+    padding-left: 20px;            /* Add padding to accommodate the dashed line */
+}
+
+.quote-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+        to bottom,
+        #949494 0,
+        #949494 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    z-index: 0;
+}
+
+.quote-box {
+    position: absolute;                    /* Stack quotes on top of each other */
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;                           /* Start hidden */
+    visibility: hidden;                   /* Start hidden to prevent interaction */
+    transition: opacity 1s ease-in-out, visibility 0s 1s; /* Delay visibility change to sync with opacity */
+    z-index: 1;
+    padding: 20px 20px 20px 40px;         /* Left padding to offset content from the dashed line */
+}
+
+.quote-box.active {
+    position: relative;                   /* Keep the active one in normal flow */
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 1;                           /* Fade in */
+    visibility: visible;                  /* Make visible */
+    transition: opacity 1s ease-in-out;   /* Smooth fade-in effect */
+    z-index: 2;
+    padding: 20px 20px 20px 40px;         /* Left padding to offset content from the dashed line */
+}
+
+.quote-content {
+    color: #000000;
+    font-size: 50px;             /* Responsive font size */
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.quote-name {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #1B62E0;
+    margin-top: 5px;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .testimonial-box {
+        flex: 1 1 calc(50% - 40px); /* Two per row on medium screens */
+    }
+
+    .content-left,
+    .content-right {
+        flex: 1 1 calc(50% - 20px); /* Side by side on medium screens */
+    }
+
+    .footer-logo,
+    .footer-links {
+        flex: 1 1 50%;             /* Side by side in footer */
+    }
+
+    .footer-links {
+        flex-wrap: nowrap;         /* Prevent wrapping on medium screens */
+        justify-content: flex-start;
+        gap: 40px;
+    }
+
+    .footer-column {
+        flex: 1 1 auto;            /* Adjust columns */
+        margin-bottom: 0;
+    }
+
+    .footer-bottom p,
+    .footer-credit {
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) {
+    .testimonial-box {
+        flex: 1 1 calc(33.333% - 40px); /* Three per row on large screens */
+    }
+
+    .layout-container {
+        margin-bottom: 100px;
+    }
+
+    .content-left,
+    .content-right {
+        flex: 1;                   /* Equal flex on large screens */
+    }
+
+    .footer-top {
+        align-items: flex-start;
+        padding: 60px 20px;
+    }
+
+    .footer-logo {
+        flex: 1 1 auto;
+    }
+
+    .footer-links {
+        flex: 3 1 auto;
+        margin-left: 0;
+    }
+
+    .footer-bottom {
+        padding: 20px 20px;
+    }
+}

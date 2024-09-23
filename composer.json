@@ -7,7 +7,7 @@
         "silverstripe/recipe-plugin": "~2.0.0@stable",
         "silverstripe/vendor-plugin": "~2.0.2@stable",
         "silverstripe/recipe-cms": "~5.2.0@stable",
-        "silverstripe-themes/simple": "~3.3.1@stable",
+        "silverstripe-themes/bootstrap": "~3.3.1@stable",
         "silverstripe/login-forms": "~5.2.0@stable",
         "ilateral/silverstripe-bootstrap-4": "^1.4"
     },
@@ -15,6 +15,9 @@
         "phpunit/phpunit": "^9.6"
     },
     "extra": {
+        "expose": [
+            "themes/custom"
+        ],
         "project-files-installed": [
             ".htaccess",
             "app/.htaccess",

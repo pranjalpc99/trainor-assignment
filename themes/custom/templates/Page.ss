@@ -15,8 +15,7 @@
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 
-		<link rel="stylesheet" href="themes/custom/css/custom.css">
-        <% require css('themes/custom/css/custom.css') %>
+        <% require themedCSS('custom') %>
 		
 		<% if $FeaturedImage %>
 			<meta property="og:image" content="{$BaseHref}{$FeaturedImage.SetWidth(550).FileName}" />
