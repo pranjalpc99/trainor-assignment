@@ -7,17 +7,93 @@ Base project folder for a Silverstripe ([http://silverstripe.org](http://silvers
 
 ## Installation
 
+1. Clone the Repository
+- Open your terminal or command prompt and navigate to the directory where you want to install the project. Then run:
 ```sh
-composer create-project silverstripe/installer my-app
+git clone https://github.com/pranjalpc99/trainor-assignment.git
 ```
 
-See [Getting Started](https://docs.silverstripe.org/en/getting_started/) for more information.
+2. Navigate to the Project Directory
+```sh
+cd trainor-assignment
+```
 
-## Bugtracker
+3. Install Dependencies
+- Use Composer to install all project dependencies:
+```sh
+composer install
+```
 
-Bugs are tracked on github.com ([framework issues](https://github.com/silverstripe/silverstripe-framework/issues),
-[cms issues](https://github.com/silverstripe/silverstripe-cms/issues)).
-Please read our [issue reporting guidelines](https://docs.silverstripe.org/en/contributing/issues_and_bugs/).
+4. Start your web server
+- Install Apache via Homebrew
+```sh
+brew install httpd
+```
+- Edit the httpd.conf File
+```
+code /opt/homebrew/etc/httpd/httpd.conf  
+```
+- Change `Listen` to port `80`
+- Look for `IfModule` and replace
+```sh
+<IfModule dir_module>
+    DirectoryIndex index.html
+</IfModule>
+```
+with
+```sh
+<IfModule !mpm_prefork_module>
+	#LoadModule cgid_module lib/httpd/modules/mod_cgid.so
+</IfModule>
+<IfModule mpm_prefork_module>
+	#LoadModule cgi_module lib/httpd/modules/mod_cgi.so
+</IfModule>
+```
+- Add this line to use php
+```sh
+LoadModule php_module /opt/homebrew/opt/php@8.2/lib/httpd/modules/libphp.so
+```
+- Update User and Group
+```sh
+User <your_username>
+Group staff
+```
+
+- Change Servername to `localhost`
+- Update DocumentRoot to point to your working directory, example: 
+```sh
+DocumentRoot "/Users/your_username/path/to/your-project/public"
+```
+- Just below that line update Directory:
+```sh
+<Directory "/Users/your_username/path/to/your-project/public">
+```
+
+6. In `.env` file you might have to change the `SS_DATABASE_USERNAME` with your system username.
+
+7. Start Apache
+```sh
+brew services start httpd
+```
+
+8. Run the Database Build Task
+- Navigate to `http://localhost/dev/build?flush=all` in your browser.
+
+9. Run the application
+- Vist `http://localhost` or the domain you configured
+
+# Access the CMS
+To access the SilverStripe CMS admin interface, navigate to:
+```sh
+http://localhost/admin
+```
+Log in using the default admin credentials you set in the .env file:
+- Username: admin
+- Password: password
+
+## Note
+To set the hero image (of the gentleman on the page), I have added a few images to the assets folder in the project.
+
 
 ## Development and Contribution
 
